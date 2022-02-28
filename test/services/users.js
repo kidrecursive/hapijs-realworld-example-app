@@ -7,12 +7,12 @@ const LabbableServer = require('../../lib')
 const lab = exports.lab = Lab.script()
 const describe = lab.describe
 const before = lab.before
-const after = lab.after
+// const after = lab.after
 const it = lab.it
 const expect = Code.expect
 const factory = require('../factories')
-const DatabaseCleaner = require('database-cleaner')
-const databaseCleaner = new DatabaseCleaner('mongodb')
+// const DatabaseCleaner = require('database-cleaner')
+// const databaseCleaner = new DatabaseCleaner('mongodb')
 const Promise = require('bluebird')
 
 describe('Services', () => {
@@ -86,7 +86,7 @@ describe('Services', () => {
       factory.attrs('user', {password: 'password'}).then(attrs => {
         server.methods.services.users.create({ user: attrs }, (err, user) => {
           expect(err).to.be.null()
-          expect(user._id).to.not.be.undefined().and.not.empty()
+          expect(user._id).to.not.be.undefined().and.not.null()
           expect(user.username).to.equal(attrs.username)
           expect(user.email).to.equal(attrs.email)
           expect(user.bio).to.equal(attrs.bio)
@@ -151,9 +151,9 @@ describe('Services', () => {
     })
   })
 
-  after((done) => {
-    databaseCleaner.clean(server.app.db.link, () => {
-      return done()
-    })
-  })
+  // after((done) => {
+  //   databaseCleaner.clean(server.app.db.link, () => {
+  //     return done()
+  //   })
+  // })
 })

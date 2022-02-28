@@ -7,14 +7,14 @@ const LabbableServer = require('../lib')
 const lab = exports.lab = Lab.script()
 const describe = lab.describe
 const before = lab.before
-const after = lab.after
+// const after = lab.after
 const it = lab.it
 const expect = Code.expect
 const JWT = require('jsonwebtoken')
 const factory = require('./factories')
 const config = require('../lib/config')
-const DatabaseCleaner = require('database-cleaner')
-const databaseCleaner = new DatabaseCleaner('mongodb')
+// const DatabaseCleaner = require('database-cleaner')
+// const databaseCleaner = new DatabaseCleaner('mongodb')
 
 describe('users endpoint', () => {
   let server
@@ -304,8 +304,8 @@ describe('users endpoint', () => {
 
   describe('update', () => {
     let userAttrs = {
-      username: 'user1',
-      email: 'new.emailaddress@conduit.com',
+      username: 'user2',
+      email: 'new.emailaddress2@conduit.com',
       password: '',
       bio: 'Sharing is carring',
       image: 'http://example.com/images/avatar.png'
@@ -392,11 +392,11 @@ describe('users endpoint', () => {
     })
   })
 
-  after((done) => {
-    databaseCleaner.clean(server.app.db.link, () => {
-      return done()
-    })
-  })
+  // after((done) => {
+  //   databaseCleaner.clean(server.app.db.link, () => {
+  //     return done()
+  //   })
+  // })
 })
 
 function generateJWTToken (username) {

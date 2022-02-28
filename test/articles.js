@@ -8,12 +8,12 @@ const LabbableServer = require('../lib')
 const lab = exports.lab = Lab.script()
 const describe = lab.describe
 const before = lab.before
-const after = lab.after
+// const after = lab.after
 const it = lab.it
 const expect = Code.expect
 const factory = require('./factories')
-const DatabaseCleaner = require('database-cleaner')
-const databaseCleaner = new DatabaseCleaner('mongodb')
+// const DatabaseCleaner = require('database-cleaner')
+// const databaseCleaner = new DatabaseCleaner('mongodb')
 const Promise = require('bluebird')
 
 describe('articles endpoint', () => {
@@ -909,9 +909,9 @@ describe('articles endpoint', () => {
     })
   })
 
-  after((done) => {
-    databaseCleaner.clean(server.app.db.link, () => {
-      return done()
-    })
-  })
+  // after((done) => {
+  //   databaseCleaner.clean(server.app.db.link, () => {
+  //     return done()
+  //   })
+  // })
 })
