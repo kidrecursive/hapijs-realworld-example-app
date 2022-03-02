@@ -48,7 +48,7 @@
     "joi": "10.6.0",
     "jsonwebtoken": "^7.4.1",
     "lodash": "4.17.4",
-    "mongoose": "file:../../mongoose",
+    "mongoose": "file:../mongoose",
     "mongoose-unique-validator": "^3.0.0",
     "slug": "^0.9.1",
     "vision": "4.1.1"

@@ -7,7 +7,8 @@ const LabbableServer = require('../../lib')
 const lab = exports.lab = Lab.script()
 const describe = lab.describe
 const before = lab.before
-// const after = lab.after
+const after = lab.after
+const mongoose = require('mongoose')
 const it = lab.it
 const expect = Code.expect
 // const DatabaseCleaner = require('database-cleaner')
@@ -63,9 +64,9 @@ describe('User', () => {
     })
   })
 
-  // after((done) => {
-  //   databaseCleaner.clean(server.app.db.link, () => {
-  //     return done()
-  //   })
-  // })
+  after(async () => {
+    await mongoose.connection.db.dropCollection('articles')
+    await mongoose.connection.db.dropCollection('comments')
+    await mongoose.connection.db.dropCollection('users')
+  })
 })
