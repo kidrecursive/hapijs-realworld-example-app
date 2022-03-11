@@ -50,6 +50,7 @@
     "lodash": "4.17.4",
     "mongoose": "file:../mongoose",
     "mongoose-unique-validator": "^3.0.0",
+    "ms": "^2.1.3",
     "slug": "^0.9.1",
     "vision": "4.1.1"
   },
