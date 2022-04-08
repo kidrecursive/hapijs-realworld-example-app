@@ -4,7 +4,7 @@ const internals = {
   coverage: true,
   threshold: 90,
   colors: true,
-  timeout: 10000,
+  timeout: 5000,
   verbose: true,
   globals: 'Reflect,core,_babelPolyfill,regeneratorRuntime,__core-js_shared__'
 }

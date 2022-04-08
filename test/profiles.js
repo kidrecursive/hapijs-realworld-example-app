@@ -8,11 +8,12 @@ const lab = exports.lab = Lab.script()
 const describe = lab.describe
 const before = lab.before
 const after = lab.after
+const mongoose = require('mongoose')
 const it = lab.it
 const expect = Code.expect
 const factory = require('./factories')
-const DatabaseCleaner = require('database-cleaner')
-const databaseCleaner = new DatabaseCleaner('mongodb')
+// const DatabaseCleaner = require('database-cleaner')
+// const databaseCleaner = new DatabaseCleaner('mongodb')
 const join = require('bluebird').join
 
 describe('profiles endpoint', () => {
@@ -214,9 +215,9 @@ describe('profiles endpoint', () => {
     })
   })
 
-  after((done) => {
-    databaseCleaner.clean(server.app.db.link, () => {
-      return done()
-    })
+  after(async () => {
+    await mongoose.connection.db.dropCollection('articles')
+    await mongoose.connection.db.dropCollection('comments')
+    await mongoose.connection.db.dropCollection('users')
   })
 })

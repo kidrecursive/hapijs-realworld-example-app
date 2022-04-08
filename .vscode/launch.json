@@ -1,0 +1,13 @@
+{
+    "configurations": [
+      {
+        "runtimeExecutable": "/Users/chris.wilhite/Projects/mongoose-demo/hapijs-realworld-example-app/venv/bin/node",
+        "type": "node",
+        "request": "launch",
+        "name": "Mocha Tests",
+        "program": "${workspaceFolder}/node_modules/.bin/lab",
+        "internalConsoleOptions": "openOnSessionStart"
+      }
+    ]
+  }
+  
